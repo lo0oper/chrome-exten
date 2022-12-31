@@ -1,0 +1,32 @@
+{
+ "manifest_version": 3,
+ "name": "Demo Extension",
+ "version": "1.0.0",
+ "description": "Sample description",
+ "short_name": "Short Name",
+ "permissions": ["activeTab", "declarativeContent", "storage","webRequest"],
+ "host_permissions": [
+ "https://web.whatsapp.com/",
+  "https://extension.ninja/*"
+],
+ "background": {
+  "service_worker": "background.js"
+  },
+ "content_scripts": [
+   {
+     "matches": ["https://web.whatsapp.com/"],
+     "css": ["background.css"],
+     "js": ["contentscript.js"]
+   }
+ ],
+ "action": {
+   "default_title": "Does a thing when you do a thing",
+   "default_popup": "popup.html",
+   "default_icon": {
+    "1":"images/naruto.webp"
+   }
+ },
+ "icons": {
+   "1":"/images/naruto.webp"
+  }
+}
